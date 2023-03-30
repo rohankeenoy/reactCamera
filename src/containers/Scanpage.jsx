@@ -1,9 +1,8 @@
 import React, {useRef, useEffect,useState} from 'react'
-//camera
+
 const Scanpage = () => {
+    //Camera rendering 
     const videoRef = useRef(null);
-    const photoRef = useRef(null);
-    const [hasPhoto, setHasPhoto] = useState(false);
     const getVideo = () =>{
         navigator.mediaDevices.getUserMedia({video:{width: 600, height: 600}})
         .then(stream => {
@@ -24,14 +23,10 @@ const Scanpage = () => {
     return(
         <div className="Scanpage">
             <p>Scan page</p>
-        <div className = "camera">
+            <div className = "camera">
+                <video ref={videoRef}></video>
 
-
-        </div>
-        <div className={'result'+ (hasPhoto ? 'hasPhoto': '')}>
-            <canvas ref={photoRef}></canvas>
-        </div>
-    
+            </div>
         </div>
     )
 }
