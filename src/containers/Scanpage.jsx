@@ -1,5 +1,5 @@
 import React, {useRef, useEffect,useState} from 'react'
-
+//camera
 const Scanpage = () => {
     const videoRef = useRef(null);
     const photoRef = useRef(null);
